@@ -1,0 +1,181 @@
+%--------
+%IIASA FINAL YSSP Report
+%KELLY CORTNEY GUSTAFSON
+%CREATED: 06/11/2018
+%--------
+
+%--------
+%PREAMBLE
+%--------
+
+\documentclass[12pt]{article}
+
+\usepackage[pdftex]{graphicx}
+\graphicspath{{figures/}}
+\usepackage{natbib}
+\bibliographystyle{unsrtnat}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage[margin=3cm]{geometry}
+\geometry{letterpaper, portrait}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\hypersetup{colorlinks = true, linkcolor = NavyBlue, citecolor = black, urlcolor = cyan}
+\usepackage{wrapfig}
+\usepackage[labelfont=bf]{caption}
+\usepackage{floatflt}
+\usepackage{setspace}
+\usepackage{tocloft}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{epstopdf}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{array}
+\usepackage{titleps}
+\usepackage{blindtext}
+\usepackage{fancybox}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage[title]{appendix}
+
+
+%---------------------------------
+% Customizing table column formats
+%----------------------------------
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+%------------------------
+% Customizing Title Page
+%-----------------------
+
+\usepackage{fancyhdr}
+\fancypagestyle{firstpage}{
+	\fancyhf{}% clear default for head and foot
+	\newgeometry{margin=0.5in, bottom=3.5in, top=1in}
+	\lhead{\includegraphics[width=0.25\textwidth]{IIASA_logo.png}}
+	\rhead{\begin{tabular}{ p{4.25cm} l }
+			& \color{NavyBlue} Address:  \color{black} IIASA, Schlossplatz 1, A-2361 Laxenburg, Austria \\
+			& \color{NavyBlue}Email: \color{black}repository@iiasa.ac.at \hspace{0.5cm} \color{NavyBlue}Telephone: \color{black}+43 (0)2236 807 342
+		\end{tabular}}}
+
+%------------------------
+% Customizing TOC Format
+%------------------------
+		
+\setlength{\tabcolsep}{6pt}
+\renewcommand\cfttoctitlefont{\Huge\bfseries}
+\renewcommand\cftsecfont{\Large\bfseries}
+\renewcommand\cftsubsecfont{\large}
+		
+\renewcommand\cftsecpagefont{\Large}
+\renewcommand\cftsubsecpagefont{\large}
+		
+\renewcommand\cftsecaftersnum{.}
+\renewcommand\cftsubsecaftersnum{.}
+\renewcommand\cftsubsubsecaftersnum{.}
+		
+\hyphenpenalty=10000
+\hbadness=10000
+		
+%-----------------
+%Copyright Box at Bottom
+%-----------------
+%\input{copyright.tex}
+		
+
+
+\begin{document}
+	
+%--------
+%COVER PAGE, 
+%TOC
+%ABSTRACT
+%ACKONOWLEDGMENTS
+%--------
+
+\input{titlepage.tex}
+
+\pagenumbering{roman}
+\newgeometry{margin=1in, bottom=1in, top=1in}
+
+\newpage
+\input{abstract.tex}
+
+\newpage
+\input{acknowledge.tex}
+
+%--------
+
+%PAGE NUMBERING
+%LISTS
+%--------
+\newpage
+\doublespacing
+\tableofcontents
+
+\newpage
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+
+\newpage
+\listoftables
+\addcontentsline{toc}{section}{List of Tables}
+
+\newpage
+\input{abbrvs.tex}
+\addcontentsline{toc}{section}{Abbreviations \& Acronyms}
+
+%Uncomment if you choose to have a list of nomenclature; good for equation-heavy reports
+%\newpage
+%\input{noms.tex}
+%\addcontentsline{toc}{section}{Nomenclature}
+
+\clearpage
+
+
+%--------
+%CONTENTS
+%--------
+
+\pagenumbering{arabic}
+\newpage
+\singlespacing
+
+\section{Introduction}
+\input{intro.tex}
+\subsection{Background}
+\input{background.tex}
+
+% Uncomment/Comment any \newpage commands for desired sections to begin from the top of a new page.
+\newpage
+\section{Methods}
+\input{methods.tex}
+
+\newpage
+\section{Data}
+\input{data.tex}
+
+\newpage
+\section{Results}
+\input{results.tex}
+
+\newpage
+\section{Discussion}
+\input{discussion.tex}
+
+\newpage
+\section{Conclusion}
+\input{conclusion.tex}
+
+\newpage
+%indicate type of bibliography style you'd like, currently set to APA-like style
+\bibliographystyle{apalike}
+%Indicate the .bib file you'd like to use. The SampleBib.bib file is located in parent Report_Latex folder.
+\bibliography{SampleBib}
+
+\end{document}

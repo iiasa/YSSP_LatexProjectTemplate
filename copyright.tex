@@ -1,0 +1,21 @@
+%---------
+%Copyright
+%----------
+\newcommand\copyrighttext{
+	\footnotesize 
+	\begin{minipage}[b]{\textwidth}
+		\tiny This research was funded by IIASA and its National Member Organizations in Africa, the Americas, Asia, and Europe.\\
+		\begin{tabular}{ p{2cm} l }
+			\includegraphics[width=0.1\textwidth]{titlepagefooter.png} &
+			\tiny This work is licensed under a \href{https://creativecommons.org/licenses/by-nc/4.0/#_blank}{Creative Commons Attribution-NonCommercial 4.0 International License}.\\ 
+			%& For any commercial use please contact \href{mailto:repository@iiasa.ac.at}{repository@iiasa.ac.at}\\
+			& \\
+		\end{tabular}
+		\textbf{YSSP Reports} on work of the International Institute for Applied Systems Analysis receive only limited review. Views or opinions expressed herein do not necessarily represent those of the institute, its National Member Organizations, or other organizations supporting the work.\\
+		\textbf{ZVR 524808900}	
+	\end{minipage}}
+
+\newcommand\copyrightnotice{
+						\begin{tikzpicture}[remember picture,overlay]
+						\node[anchor=south,yshift=10pt] at (current page.south) {\fbox{\parbox{\dimexpr\textwidth-\fboxsep-\fboxrule\relax}{\copyrighttext}}};
+						\end{tikzpicture}}
